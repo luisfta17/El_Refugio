@@ -30,7 +30,8 @@
 | Contact_details | varchar(255)   |
 
 ## Adopted animals
-|           Adopted_animals        |
+
+|  description    |  type          |
 | :---------------| :--------------|
 | ID              | git status     |
 | animal_id       | INT4           |
