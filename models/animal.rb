@@ -1,4 +1,8 @@
+require("date")
 require_relative("../db/sql_runner")
+require_relative("./owner")
+require_relative("./adopted_animal")
+require_relative("./type_of_animal")
 
 class Animal
 
@@ -70,6 +74,22 @@ class Animal
     result = Type_of_animal.new(type.first())
     return result.name
   end
+
+  def adopted_by(owner)
+    if self.adoptable == true && self.adopted == false
+      @adopted = true
+      @adoptable = false
+      self.update()
+      adoption = {
+        "animal_id" => self.id,
+        "owner_id" => owner.id,
+        "adoption_date" => Time.now.strftime("%Y-%m-%d")
+      }
+      new_adoption = Adopted_animal.new(adoption)
+      new_adoption.save()
+    end
+  end
+
 
   #CLASS METHODS
 
