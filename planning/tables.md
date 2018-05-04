@@ -1,8 +1,6 @@
 
 ## SQL TABLES
-#Animals table
 
-### animals
 
 | hh            | type           |
 | :-------------| :-------------:|
