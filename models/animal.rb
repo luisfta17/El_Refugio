@@ -63,6 +63,14 @@ class Animal
     SqlRunner.run( sql, values )
   end
 
+  def find_type()
+    sql = "SELECT * FROM types_of_animals WHERE id = $1"
+    values = [@type_id]
+    type = SqlRunner.run(sql, values)
+    result = Type_of_animal.new(type.first())
+    return result.name
+  end
+
   #CLASS METHODS
 
   def self.all()
