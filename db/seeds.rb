@@ -7,6 +7,7 @@ require("pry-byebug")
 Type_of_animal.delete_all()
 Owner.delete_all()
 Animal.delete_all()
+Adopted_animal.delete_all()
 
 doggo = Type_of_animal.new({
   "name" => "Doggo"
