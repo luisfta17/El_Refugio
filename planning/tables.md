@@ -2,11 +2,11 @@
 ## SQL TABLES
 
 
-| hh            | type           |
+| description   | type           |
 | :-------------| :-------------:|
 | ID            | SERIAL4        |
 | Name          | varchar(255)   |
-| Type_id       | varchar(255)   |
+| Type_id       |   INT4         |
 | Admision_date | date           |
 | Age           | INT4           |
 | adoptable?    | BOOLEAN        |
@@ -14,8 +14,8 @@
 | adopted       | BOOLEAN        |
 
 #Owners
-|           Owners                 |
-| :---            |                |
+|  description    |  type          |
+| :---------------| :--------------|
 | ID              | git status     |
 | Name            | varchar(255)   |
 | Contact_details | varchar(255)   |
