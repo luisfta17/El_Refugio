@@ -2,11 +2,13 @@
 ## SQL TABLES
 #Animals table
 
-|          Animals               |
+### animals
+
+| hh            | type           |
 | :-------------| :-------------:|
 | ID            | SERIAL4        |
 | Name          | varchar(255)   |
-| Type          | varchar(255)   |
+| Type_id       | varchar(255)   |
 | Admision_date | date           |
 | Age           | INT4           |
 | adoptable?    | BOOLEAN        |
