@@ -1,6 +1,7 @@
 require_relative( "../models/type_of_animal.rb" )
 require_relative( "../models/owner.rb" )
 require_relative( "../models/animal.rb" )
+require_relative( "../models/adopted_animal.rb" )
 require("pry-byebug")
 
 Type_of_animal.delete_all()
@@ -56,6 +57,15 @@ animal2 = Animal.new({
 })
 
 animal2.save()
+
+adoption1 = Adopted_animal.new({
+  "animal_id" => animal1.id,
+  "owner_id" => owner1.id,
+  "adoption_date" => "2018-05-04"
+})
+
+adoption1.save()
+
 
 
 binding.pry
