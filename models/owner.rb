@@ -39,12 +39,20 @@ end
   SqlRunner.run( sql, values )
 end
 
+#CLASS METHODS
+
   def self.all()
     sql = "SELECT * FROM owners"
     owners = SqlRunner.run( sql )
     result = owners.map { |owner| Owner.new( owner ) }
     return result
   end
+
+  def self.delete_all
+  sql = "DELETE FROM owners"
+  SqlRunner.run( sql )
+end
+
 
 
 end

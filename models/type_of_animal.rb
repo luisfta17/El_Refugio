@@ -36,12 +36,18 @@ class Type_of_animal
   SqlRunner.run( sql, values )
 end
 
+# CLASS METHODS 
   def self.all()
     sql = "SELECT * FROM types_of_animals"
     types = SqlRunner.run( sql )
     result = types.map { |type| Type_of_animal.new( type ) }
     return result
   end
+
+  def self.delete_all
+  sql = "DELETE FROM types_of_animals"
+  SqlRunner.run( sql )
+end
 
 
 end

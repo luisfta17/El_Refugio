@@ -2,6 +2,9 @@ require_relative( "../models/type_of_animal.rb" )
 require_relative( "../models/owner.rb" )
 require("pry-byebug")
 
+Type_of_animal.delete_all()
+Owner.delete_all()
+
 doggo = Type_of_animal.new({
   "name" => "Doggo"
 })
