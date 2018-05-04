@@ -3,7 +3,7 @@
 #Animals table
 
 |          Animals               |
-| :---          |                |
+| :-------------| :-------------:|
 | ID            | SERIAL4        |
 | Name          | varchar(255)   |
 | Type          | varchar(255)   |
