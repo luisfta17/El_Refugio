@@ -13,14 +13,14 @@
 | picture       | text           |
 | adopted       | BOOLEAN        |
 
-#Owners
+## Owners
 |  description    |  type          |
 | :---------------| :--------------|
 | ID              | git status     |
 | Name            | varchar(255)   |
 | Contact_details | varchar(255)   |
 
-#Adopted animals
+## Adopted animals
 |           Adopted_animals        |
 | :---            |                |
 | ID              | git status     |
