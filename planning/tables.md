@@ -33,7 +33,7 @@
 
 |  description    |  type          |
 | :---------------| :--------------|
-| ID              | git status     |
+| ID              | SERIAL4        |
 | animal_id       | INT4           |
 | owner_id        | INT4           |
 | Adoption_date   | date           |
