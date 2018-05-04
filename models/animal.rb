@@ -75,11 +75,23 @@ class Animal
     return result.name
   end
 
-  def adopted_by(owner)
+  def check_adoptability()
     if self.adoptable == true && self.adopted == false
-      @adopted = true
-      @adoptable = false
-      self.update()
+      return true
+    else
+      return false
+    end
+  end
+
+  def change_adoptability()
+    @adopted = true
+    @adoptable = false
+    self.update()
+  end
+
+  def adopted_by(owner)
+    if self.check_adoptability()
+      self.change_adoptability
       adoption = {
         "animal_id" => self.id,
         "owner_id" => owner.id,
