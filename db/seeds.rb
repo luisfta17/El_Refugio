@@ -1,9 +1,11 @@
 require_relative( "../models/type_of_animal.rb" )
 require_relative( "../models/owner.rb" )
+require_relative( "../models/animal.rb" )
 require("pry-byebug")
 
 Type_of_animal.delete_all()
 Owner.delete_all()
+Animal.delete_all()
 
 doggo = Type_of_animal.new({
   "name" => "Doggo"
@@ -30,6 +32,30 @@ owner2 = Owner.new({
 })
 
 owner2.save()
+
+animal1 = Animal.new({
+  "name" => "Nano",
+  "type_id" => doggo.id,
+  "age" => 8,
+  "admision_date" => "2018-05-01",
+  "picture" => "https://static.postize.com/images/SIvGTliytXrD_3580.png",
+  "adoptable" => true,
+  "adopted" => false
+})
+
+animal1.save()
+
+animal2 = Animal.new({
+  "name" => "Costilla",
+  "type_id" => doggo.id,
+  "age" => 3,
+  "admision_date" => "2018-04-01",
+  "picture" => "https://static.postize.com/images/SIvGTliytXrD_3580.png",
+  "adoptable" => true,
+  "adopted" => false
+})
+
+animal2.save()
 
 
 binding.pry
