@@ -2,7 +2,7 @@ require_relative("../db/sql_runner")
 
 class Type_of_animal
 
-  attr_reader(:name, :id)
+  attr_accessor(:name, :id)
 
   def initialize(options)
     @id = options["id"].to_i
@@ -29,6 +29,12 @@ class Type_of_animal
     values = [@id]
     type_to_remove = SqlRunner.run(sql, values)
   end
+
+  def update()
+  sql = "UPDATE types_of_animals SET name = $1 WHERE id = $2"
+  values = [@name, @id]
+  SqlRunner.run( sql, values )
+end
 
   def self.all()
     sql = "SELECT * FROM types_of_animals"
