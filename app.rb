@@ -9,7 +9,7 @@ require_relative('./models/type_of_animal')
 #READ all animals
 get '/animals' do
   @animals = Animal.all
-  erb(:index)
+  erb(:"animals/index")
 end
 
 #Delete Animal
@@ -23,11 +23,23 @@ end
 get "/animals/new" do
   @animals= Animal.all
   @types = Type_of_animal.all
-  erb(:new)
+  erb(:"animals/new")
 end
 
 post "/animals" do
   @animal = Animal.new(params)
   @animal.save()
-  erb (:create)
+  erb (:"animals/create")
+end
+
+# CREATE a new Owner
+get "/animals/newowner" do
+  @owners= Owner.all
+  erb(:"owners/new")
+end
+
+post "/animals" do
+  @owner = Animal.new(params)
+  @owner.save()
+  erb (:"owners/create")
 end

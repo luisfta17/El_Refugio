@@ -1,0 +1,20 @@
+li {
+  list-style: none;
+  text-align: center;
+justify-content: center;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+
+}
+
+img {
+  height: 200px;
+  width: auto;
+  }
+
+h2  {
+  text-align: center;
+}
