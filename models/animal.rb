@@ -90,7 +90,7 @@ class Animal
   end
 
   def adopted_by(owner)
-    if self.check_adoptability()
+    if self.check_adoptability_web()
       self.change_adoptability
       adoption = {
         "animal_id" => self.id,

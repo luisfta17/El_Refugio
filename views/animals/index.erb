@@ -9,6 +9,9 @@
 <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
 <% if animal.check_adoptability_web %>
  <p> <%= animal.name %> is adoptable!</p>
+ <form action="/animals/<%= animal.id %>/set_owner">
+   <input type="submit" value="Set an owner to this animal!">
+ </form>
  <% else %>
  <p> <%= animal.name %> is not ready for adoption yet!</p>
 <% end %>
