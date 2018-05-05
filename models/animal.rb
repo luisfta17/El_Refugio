@@ -75,8 +75,8 @@ class Animal
     return result.name
   end
 
-  def check_adoptability()
-    if self.adoptable == true && self.adopted == false
+  def check_adoptability_web() #when object comes back from db boolean is "t" or "f"
+    if self.adoptable == "t" && self.adopted == "f"
       return true
     else
       return false

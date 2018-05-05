@@ -1,0 +1,18 @@
+<h2>Hello there! here you will find all the animals that are in the shelter</h2>
+<hr>
+
+<% for animal in @animals %>
+<p>Name: <%= animal.name %></p>
+<p>Type: <%= animal.find_type() %></p>
+<p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
+<p>Age: <%= animal.age %></p>
+<p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
+<% if animal.check_adoptability_web %>
+ <p> <%= animal.name %> is adoptable!</p>
+<% end %>
+
+<form method="post" action="/students/<%= animal.id %>/delete">
+  <input type="submit" value="Delete animal">
+</form>
+<hr />
+<%end  %>
