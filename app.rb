@@ -33,13 +33,13 @@ post "/animals" do
 end
 
 # CREATE a new Owner
-get "/animals/newowner" do
+get "/owners/newowner" do
   @owners= Owner.all
   erb(:"owners/new")
 end
 
-post "/animals" do
-  @owner = Animal.new(params)
+post "/owners" do
+  @owner = Owner.new(params)
   @owner.save()
   erb (:"owners/create")
 end
