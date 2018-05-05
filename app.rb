@@ -18,3 +18,16 @@ post "/animals/:id/delete" do
   @animal.delete()
   redirect "/animals"
 end
+
+# CREATE a new animal
+get "/animals/new" do
+  @animals= Animal.all
+  @types = Type_of_animal.all
+  erb(:new)
+end
+
+post "/animals" do
+  @animal = Animal.new(params)
+  @animal.save()
+  erb (:create)
+end
