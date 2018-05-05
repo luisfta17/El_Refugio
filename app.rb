@@ -66,7 +66,7 @@ post "/animals/:id/set_owner/:ownerid/created" do
 @animal = Animal.find(params[:id])
 @owner = Owner.find(params[:ownerid])
 @animal.adopted_by(@owner)
-redirect "/animals"
+redirect "/adoptions"
 end
 
 
@@ -95,4 +95,11 @@ post "/owners/:id/delete" do
   @owner = Owner.find(params[:id])
   @owner.delete()
   redirect "/owners"
+end
+
+
+# Adoptions
+get "/adoptions" do
+  @adopteds = Adopted_animal.all
+  erb(:"adoptions/index")
 end
