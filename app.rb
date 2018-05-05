@@ -11,3 +11,10 @@ get '/animals' do
   @animals = Animal.all
   erb(:index)
 end
+
+#Delete Animal
+post "/animals/:id/delete" do
+  @animal = Animal.find(params[:id])
+  @animal.delete()
+  redirect "/animals"
+end

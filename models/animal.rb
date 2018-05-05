@@ -116,4 +116,13 @@ class Animal
     sql = "DELETE FROM animals"
     SqlRunner.run( sql )
   end
+
+  def self.find( id )
+  sql = "SELECT * FROM animals WHERE id = $1"
+  values = [id]
+  animal = SqlRunner.run( sql, values )
+  result = Animal.new( animal.first )
+  return result
+end
+
 end
