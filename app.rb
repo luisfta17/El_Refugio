@@ -6,6 +6,9 @@ require_relative('./models/animal')
 require_relative('./models/owner')
 require_relative('./models/type_of_animal')
 
+
+# ANIMALS
+
 #READ all animals
 get '/animals' do
   @animals = Animal.all
@@ -32,7 +35,26 @@ post "/animals" do
   erb (:"animals/create")
 end
 
+# UPDATE animal as non-adoptable
 
+post "/animals/:id/nonadoptable" do
+  @animal = Animal.find(params[:id])
+  @animal.adoptable = false
+  @animal.update()
+  redirect "/animals"
+end
+
+# UPDATE animal as adoptable
+
+post "/animals/:id/adoptable" do
+  @animal = Animal.find(params[:id])
+  @animal.adoptable = true
+  @animal.update()
+  redirect "/animals"
+end
+
+
+# OWNERS
 
 #READ all owners
 get '/owners' do

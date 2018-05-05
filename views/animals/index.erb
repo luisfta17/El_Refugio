@@ -9,10 +9,23 @@
 <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
 <% if animal.check_adoptability_web %>
  <p> <%= animal.name %> is adoptable!</p>
+ <% else %>
+ <p> <%= animal.name %> is not ready for adoption yet!</p>
 <% end %>
 
 <form method="post" action="/animals/<%= animal.id %>/delete">
   <input type="submit" value="Delete animal">
 </form>
+
+<% if animal.adoptable == "t" %>
+<form method="post" action="/animals/<%= animal.id %>/nonadoptable">
+  <input type="submit" value="Set animal as non-adoptable">
+</form>
+<% else %>
+<form method="post" action="/animals/<%= animal.id %>/adoptable">
+  <input type="submit" value="Set animal as adoptable">
+</form>
+<% end %>
+
 <hr />
 <%end  %>
