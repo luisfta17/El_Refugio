@@ -32,6 +32,14 @@ post "/animals" do
   erb (:"animals/create")
 end
 
+
+
+#READ all owners
+get '/owners' do
+  @owners = Owner.all
+  erb(:"owners/index")
+end
+
 # CREATE a new Owner
 get "/owners/newowner" do
   @owners= Owner.all
@@ -42,4 +50,11 @@ post "/owners" do
   @owner = Owner.new(params)
   @owner.save()
   erb (:"owners/create")
+end
+
+#Delete Owner
+post "/owners/:id/delete" do
+  @owner = Owner.find(params[:id])
+  @owner.delete()
+  redirect "/owners"
 end

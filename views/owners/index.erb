@@ -1,0 +1,12 @@
+<h2>Here's the list of all the registered owners in the shelter:</h2>
+<hr>
+
+<% for owner in @owners %>
+<p>Full Name: <%= owner.name %></p>
+<p>Contact Details: <%= owner.contact_details %></p>
+
+<form method="post" action="/owners/<%= owner.id %>/delete">
+  <input type="submit" value="Delete Owner">
+</form>
+<hr />
+<%end  %>

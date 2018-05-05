@@ -37,22 +37,28 @@ end
   sql = "UPDATE owners SET ( name, contact_details) = ($1, $2) WHERE id = $3"
   values = [@name, @contact_details, @id]
   SqlRunner.run( sql, values )
-end
-
-#CLASS METHODS
-
-  def self.all()
-    sql = "SELECT * FROM owners"
-    owners = SqlRunner.run( sql )
-    result = owners.map { |owner| Owner.new( owner ) }
-    return result
   end
 
-  def self.delete_all
-  sql = "DELETE FROM owners"
-  SqlRunner.run( sql )
-end
+  #CLASS METHODS
 
+    def self.all()
+      sql = "SELECT * FROM owners"
+      owners = SqlRunner.run( sql )
+      result = owners.map { |owner| Owner.new( owner ) }
+      return result
+    end
 
+    def self.delete_all
+    sql = "DELETE FROM owners"
+    SqlRunner.run( sql )
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
+    owner = SqlRunner.run( sql, values )
+    result = Owner.new( owner.first )
+    return result
+  end
 
 end
