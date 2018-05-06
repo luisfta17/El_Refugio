@@ -1,0 +1,35 @@
+<h2>A list of all our animals ready for adoption:</h2>
+<hr>
+
+<% for animal in @animals %>
+  <% if animal.check_adoptability_web %>
+    <p>Name: <%= animal.name %></p>
+    <p>Type: <%= animal.find_type() %></p>
+    <p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
+    <p>Age: <%= animal.age %></p>
+    <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
+    <p> <%= animal.name %> is adoptable!</p>
+    <form action="/animals/<%= animal.id %>/set_owner">
+      <input type="submit" value="Set an owner to this animal!">
+    </form>
+
+    <form action="/animals/<%= animal.id %>/update">
+      <input type="submit" value="Edit this animal">
+    </form>
+
+    <form method="post" action="/animals/<%= animal.id %>/delete">
+      <input type="submit" value="Delete animal">
+    </form>
+    <% if animal.adoptable == "t" %>
+    <form method="post" action="/animals/<%= animal.id %>/nonadoptable">
+      <input type="submit" value="Set animal as non-adoptable">
+    </form>
+    <% else %>
+    <form method="post" action="/animals/<%= animal.id %>/adoptable">
+      <input type="submit" value="Set animal as adoptable">
+    </form>
+    <% end %>
+
+    <hr />
+  <%end  %>
+<%end  %>

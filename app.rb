@@ -17,6 +17,12 @@ get '/animals' do
   erb(:"animals/index")
 end
 
+#READ all animals ready for adoption
+get '/animals/for_adoption' do
+  @animals = Animal.all()
+  erb(:"animals/for_adoption")
+end
+
 #Delete Animal
 post "/animals/:id/delete" do
   @animal = Animal.find(params[:id])
