@@ -21,6 +21,17 @@ get '/animals' do
   erb(:"animals/index", :layout => :layout)
 end
 
+#READ animals by type
+get '/animals/find' do
+  @types = Type_of_animal.all
+  erb(:"animals/find")
+end
+
+get '/animals/find/:id' do
+  @animals = Type_of_animal.find_animals_by_type_id(params[:id])
+  erb(:"animals/results")
+end
+
 #READ all animals ready for adoption
 get '/animals/for_adoption' do
   @animals = Animal.all()
