@@ -124,6 +124,19 @@ post "/owners/:id/delete" do
   redirect "/owners"
 end
 
+# UPDATE existing owners
+get "/owners/:id/update" do
+  @owner_to_update = Owner.find(params[:id])
+  erb(:"owners/update")
+end
+
+post "/owners/:id/updated" do
+  @owner_to_update = Owner.new(params)
+  @owner_to_update.update()
+  redirect "/owners"
+
+end
+
 
 # Adoptions
 get "/adoptions" do
