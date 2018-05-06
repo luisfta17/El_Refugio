@@ -8,7 +8,7 @@ require_relative('./models/type_of_animal')
 
 #WELCOME PAGE
 get "/" do
-  erb(:"welcome/index")
+  erb(:"welcome/index", :layout => :welcome_layout)
 end
 
 # ANIMALS
@@ -18,7 +18,7 @@ get '/animals' do
   @animals = Animal.all()
   @adopteds = Adopted_animal.all()
   @owners = Owner.all()
-  erb(:"animals/index")
+  erb(:"animals/index", :layout => :layout)
 end
 
 #READ all animals ready for adoption

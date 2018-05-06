@@ -5,9 +5,8 @@ li {
 }
 
 nav {
-  display: inline;
+  display: inline !important;
   text-align: center;
-
 }
 
 img {
