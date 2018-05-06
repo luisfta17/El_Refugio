@@ -1,4 +1,8 @@
 require_relative("../db/sql_runner")
+require_relative("./request")
+require_relative("./owner")
+require_relative("./adopted_animal")
+require_relative("./type_of_animal")
 
 class User
 
@@ -11,20 +15,20 @@ class User
   end
 
   def save()
-  sql = "INSERT INTO users
-  (
-    name,
-    contact_details
-  )
-  VALUES
-  (
-    $1, $2
-  )
-  RETURNING *"
-  values = [@name, @contact_details]
-  user_data = SqlRunner.run(sql, values)
-  @id = user_data.first()['id'].to_i
-end
+    sql = "INSERT INTO users
+    (
+      name,
+      contact_details
+    )
+    VALUES
+    (
+      $1, $2
+    )
+    RETURNING *"
+    values = [@name, @contact_details]
+    user_data = SqlRunner.run(sql, values)
+    @id = user_data.first()['id'].to_i
+  end
 
 
   def delete()
@@ -38,6 +42,17 @@ end
   values = [@name, @contact_details, @id]
   SqlRunner.run( sql, values )
   end
+  
+  def create_request(animal, text)
+    request = {
+      "user_id" => self.id,
+      "animal_id" => animal.id,
+      "comment" => text
+    }
+    new_request = Request.new(request)
+    new_request.save()
+  end
+
 
   #CLASS METHODS
 
