@@ -102,6 +102,13 @@ class Animal
     end
   end
 
+  def find_adoption_info()
+    sql = "SELECT * FROM adopted_animals WHERE animal_id = $1"
+    values = [@id]
+    adoption_info = SqlRunner.run(sql, values)
+    result = Adopted_animal.new(adoption_info.first())
+    return result
+  end
 
   #CLASS METHODS
 
