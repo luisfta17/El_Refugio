@@ -1,0 +1,41 @@
+<form method="post" action="/animals/<%= @animal_to_update.id %>/updated">
+
+  <label for="name"> Name:</label>
+  <input type="text" name="name" id="name"  value="<%= @animal_to_update.name %>">
+
+  <label for="type_id"> Select a type of animal:</label>
+  <select name="type_id" id="type_id">
+  <% for type in @types %>
+  <option value="<%= type.id %>"> <%= type.name %></option>
+  <%end  %>
+  </select>
+
+  <label for="age">Age: </label>
+  <input type="number" name="age" value= "<%= @animal_to_update.age %>" id="age">
+
+  <label for="admision_date">Admision date: </label>
+  <input type="date" name="admision_date" id="admision_date" value="<%= @animal_to_update.admision_date %>">
+
+  <label for="picture"> Add picture Link:</label>
+  <input type="text" name="picture" id="picture"  value="<%= @animal_to_update.picture %>">
+
+  <label for="adoptable"> Is this animal ready for adoption?</label>
+  <select name="adoptable" id="adoptable">
+    <% if @animal_to_update.adoptable == "t" %>
+  <option selected value= true> Yes </option>
+  <option value= false> not yet </option>
+  <% else %>
+  <option value= true> Yes </option>
+  <option selected value= false> not yet </option>
+  <% end  %>
+  </select>
+
+  <label for="adopted"> Is this animal adopted?</label>
+  <select name="adopted" id="adopted">
+    <option selected value = false > not yet </option>
+    <option selected value = true > Yes </option>
+  </select>
+
+
+  <input type="submit" value="Update Animal">
+</form>

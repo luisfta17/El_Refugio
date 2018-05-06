@@ -16,9 +16,14 @@
  <p> <%= animal.name %> is not ready for adoption yet!</p>
 <% end %>
 
+<form action="/animals/<%= animal.id %>/update">
+  <input type="submit" value="Edit this animal">
+</form>
+
 <form method="post" action="/animals/<%= animal.id %>/delete">
   <input type="submit" value="Delete animal">
 </form>
+
 
 <% if animal.adoptable == "t" %>
 <form method="post" action="/animals/<%= animal.id %>/nonadoptable">

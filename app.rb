@@ -69,6 +69,21 @@ post "/animals/:id/set_owner/:ownerid/created" do
 redirect "/adoptions"
 end
 
+# UPDATE existing animals
+get "/animals/:id/update" do
+  @animal_to_update = Animal.find(params[:id])
+  @types = Type_of_animal.all
+  erb(:"animals/update")
+end
+
+post "/animals/:id/updated" do
+  @animal_to_update = Animal.new(params)
+  @animal_to_update.update()
+  redirect "/animals"
+
+end
+
+
 
 # OWNERS
 
