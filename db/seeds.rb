@@ -2,12 +2,15 @@ require_relative( "../models/type_of_animal.rb" )
 require_relative( "../models/owner.rb" )
 require_relative( "../models/animal.rb" )
 require_relative( "../models/adopted_animal.rb" )
+require_relative( "../models/user.rb" )
+require_relative( "../models/request.rb" )
 require("pry-byebug")
 
 Type_of_animal.delete_all()
 Owner.delete_all()
 Animal.delete_all()
 Adopted_animal.delete_all()
+User.delete_all()
 
 doggo = Type_of_animal.new({
   "name" => "Doggo"
@@ -127,6 +130,19 @@ adoption1 = Adopted_animal.new({
 
 adoption1.save()
 
+user1 = User.new({
+  "name" => "Maria Thompson",
+  "contact_details" => "maria_thompson@gmail.com"
+})
+
+user1.save()
+
+user2 = User.new({
+  "name" => "Lele lolas",
+  "contact_details" => "lele@gmail.com"
+})
+
+user2.save()
 
 
 binding.pry
