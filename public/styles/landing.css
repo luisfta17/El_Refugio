@@ -1,5 +1,5 @@
 body	{
-	background: url(https://images.unsplash.com/photo-1482434368596-fbd06cae4f89?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c29b9baf9f1e75fa88c392c61973e2dd&auto=format&fit=crop&w=1868&q=80);
+	background: url('/images/background.jpeg');
     background-size: cover;
     background-position: center;
     font-family: leto;

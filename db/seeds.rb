@@ -21,6 +21,18 @@ cat = Type_of_animal.new({
 
 cat.save()
 
+deer = Type_of_animal.new({
+  "name" => "Deer"
+})
+
+deer.save()
+
+rabbit = Type_of_animal.new({
+  "name" => "Rabbit"
+})
+
+rabbit.save()
+
 owner1 = Owner.new({
   "name" => "Luis Tejero",
   "contact_details" => "Luis@gmail.com"
@@ -39,8 +51,8 @@ animal1 = Animal.new({
   "name" => "Nano",
   "type_id" => doggo.id,
   "age" => 8,
-  "admision_date" => "2018-05-01",
-  "picture" => "https://static.postize.com/images/SIvGTliytXrD_3580.png",
+  "admision_date" => "2018-04-02",
+  "picture" => "/images/doggo1.png",
   "adoptable" => true,
   "adopted" => false
 })
@@ -52,15 +64,63 @@ animal2 = Animal.new({
   "type_id" => doggo.id,
   "age" => 3,
   "admision_date" => "2018-04-01",
-  "picture" => "https://static.postize.com/images/SIvGTliytXrD_3580.png",
+  "picture" => "/images/doggo2.jpg",
   "adoptable" => true,
   "adopted" => false
 })
 
 animal2.save()
 
+animal3 = Animal.new({
+  "name" => "Snow",
+  "type_id" => doggo.id,
+  "age" => 1,
+  "admision_date" => "2018-04-07",
+  "picture" => "/images/doggo3.jpg",
+  "adoptable" => false,
+  "adopted" => true
+})
+
+animal3.save()
+
+animal4 = Animal.new({
+  "name" => "Arnold",
+  "type_id" => cat.id,
+  "age" => 3,
+  "admision_date" => "2018-04-10",
+  "picture" => "/images/arnolf.jpg",
+  "adoptable" => false,
+  "adopted" => false
+})
+
+animal4.save()
+
+animal5 = Animal.new({
+  "name" => "Bambi",
+  "type_id" => deer.id,
+  "age" => 1,
+  "admision_date" => "2018-04-10",
+  "picture" => "/images/bambi.jpg",
+  "adoptable" => false,
+  "adopted" => false
+})
+
+animal5.save()
+
+animal6 = Animal.new({
+  "name" => "Rocket",
+  "type_id" => rabbit.id,
+  "age" => 6,
+  "admision_date" => "2018-04-11",
+  "picture" => "/images/rocket.jpg",
+  "adoptable" => false,
+  "adopted" => false
+})
+
+animal6.save()
+
 adoption1 = Adopted_animal.new({
-  "animal_id" => animal1.id,
+  "animal_id" => animal3.id,
   "owner_id" => owner1.id,
   "adoption_date" => "2018-05-04"
 })
