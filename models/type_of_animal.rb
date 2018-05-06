@@ -34,9 +34,9 @@ class Type_of_animal
   sql = "UPDATE types_of_animals SET name = $1 WHERE id = $2"
   values = [@name, @id]
   SqlRunner.run( sql, values )
-end
+  end
 
-# CLASS METHODS 
+  # CLASS METHODS
   def self.all()
     sql = "SELECT * FROM types_of_animals"
     types = SqlRunner.run( sql )
@@ -47,7 +47,14 @@ end
   def self.delete_all
   sql = "DELETE FROM types_of_animals"
   SqlRunner.run( sql )
-end
+  end
 
+  def self.find_animals_by_type_id(id)
+    sql = "SELECT * FROM animals WHERE type_id = $1"
+    values = [id]
+    animal_data = SqlRunner.run(sql, values)
+    result = animal_data.map { |animal| Animal.new( animal ) }
+    return result
+  end
 
 end
