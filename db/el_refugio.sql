@@ -1,7 +1,9 @@
 DROP TABLE IF EXISTS adopted_animals;
+DROP TABLE IF EXISTS requests;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS types_of_animals;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE types_of_animals (
   id serial4 primary key,
@@ -30,4 +32,17 @@ CREATE TABLE adopted_animals (
   animal_id int4 REFERENCES animals(id) ON DELETE CASCADE,
   owner_id int4 REFERENCES owners(id) ON DELETE CASCADE,
   adoption_date date
+);
+
+CREATE TABLE users (
+  id serial4 primary key,
+  name varchar(255),
+  contact_details text
+);
+
+CREATE TABLE requests (
+  id serial4 primary key,
+  user_id int4 REFERENCES users(id) ON DELETE CASCADE,
+  animal_id int4 REFERENCES animals(id) ON DELETE CASCADE,
+  comment text
 );
