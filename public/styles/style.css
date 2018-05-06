@@ -1,10 +1,10 @@
 li {
   list-style: none;
   text-align: center;
-justify-content: center;
+  justify-content: center;
 }
 
-nav li {
+nav {
   display: inline;
   text-align: center;
 
@@ -21,4 +21,8 @@ h2  {
 
 .hide {
   display: none;
+}
+
+.centered {
+  text-align: center !important;
 }

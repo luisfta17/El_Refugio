@@ -6,6 +6,10 @@ require_relative('./models/animal')
 require_relative('./models/owner')
 require_relative('./models/type_of_animal')
 
+#WELCOME PAGE
+get "/" do
+  erb(:"welcome/index")
+end
 
 # ANIMALS
 

@@ -31,11 +31,11 @@
 </form>
 
 
-<% if animal.adoptable == "t" %>
+<% if animal.adoptable == "t" && animal.adopted == "f" %>
 <form method="post" action="/animals/<%= animal.id %>/nonadoptable">
   <input type="submit" value="Set animal as non-adoptable">
 </form>
-<% else %>
+<% elsif animal.adoptable == "f" && animal.adopted == "f" %>
 <form method="post" action="/animals/<%= animal.id %>/adoptable">
   <input type="submit" value="Set animal as adoptable">
 </form>
