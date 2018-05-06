@@ -80,4 +80,13 @@ class Adopted_animal
     sql = "DELETE FROM adopted_animals"
     SqlRunner.run( sql )
   end
+
+  def self.find_owner_by_animal_id( id )
+    sql = "SELECT owners.* FROM owners INNER JOIN adopted_animals ON owners.id = adopted_animals.owner_id WHERE adopted_animals.animal_id = $1 "
+    values = [id]
+    owner = SqlRunner.run( sql, values )
+    result = Owner.new( owner.first )
+    return result
+  end
+
 end

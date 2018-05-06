@@ -11,7 +11,9 @@ require_relative('./models/type_of_animal')
 
 #READ all animals
 get '/animals' do
-  @animals = Animal.all
+  @animals = Animal.all()
+  @adopteds = Adopted_animal.all()
+  @owners = Owner.all()
   erb(:"animals/index")
 end
 

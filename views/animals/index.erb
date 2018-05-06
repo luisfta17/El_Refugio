@@ -12,8 +12,10 @@
  <form action="/animals/<%= animal.id %>/set_owner">
    <input type="submit" value="Set an owner to this animal!">
  </form>
- <% else %>
+ <% elsif animal.adoptable == "f" && animal.adopted == "f" %>
  <p> <%= animal.name %> is not ready for adoption yet!</p>
+ <% elsif animal.adoptable == "f" && animal.adopted == "t" %>
+ <p> <%= animal.name %> was adopted by <%= Adopted_animal.find_owner_by_animal_id(animal.id).name%></p>
 <% end %>
 
 <form action="/animals/<%= animal.id %>/update">
