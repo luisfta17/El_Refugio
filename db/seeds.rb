@@ -11,6 +11,7 @@ Owner.delete_all()
 Animal.delete_all()
 Adopted_animal.delete_all()
 User.delete_all()
+Request.delete_all()
 
 doggo = Type_of_animal.new({
   "name" => "Doggo"
@@ -143,6 +144,14 @@ user2 = User.new({
 })
 
 user2.save()
+
+request1 = Request.new({
+  "user_id" => user1.id,
+  "animal_id" => animal6.id,
+  "comment" => "I want this animal because looks awesome"
+})
+
+request1.save()
 
 
 binding.pry
