@@ -41,6 +41,22 @@ end
   SqlRunner.run( sql, values )
   end
 
+  def find_animal()
+    sql = "SELECT * FROM animals WHERE id = $1"
+    values = [@animal_id]
+    animal = SqlRunner.run(sql, values)
+    result = Animal.new(animal.first())
+    return result
+  end
+
+  def find_user()
+    sql = "SELECT * FROM users WHERE id = $1"
+    values = [@user_id]
+    user = SqlRunner.run(sql, values)
+    result = User.new(user.first())
+    return result
+  end
+
   #CLASS METHODS
 
     def self.all()
