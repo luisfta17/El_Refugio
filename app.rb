@@ -177,3 +177,14 @@ get '/users/animals/not_ready' do
   @animals = Animal.all()
   erb(:"users/animals/not_ready", :layout => :user_layout)
 end
+
+#READ animals by type
+get '/users/animals/find' do
+  @types = Type_of_animal.all
+  erb(:"users/animals/find", :layout => :user_layout)
+end
+
+get '/users/animals/find/:id' do
+  @animals = Type_of_animal.find_animals_by_type_id(params[:id])
+  erb(:"users/animals/results", :layout => :user_layout)
+end
