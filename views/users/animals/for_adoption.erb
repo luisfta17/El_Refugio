@@ -9,7 +9,7 @@
     <p>Age: <%= animal.age %></p>
     <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
     <p> <%= animal.name %> is adoptable!</p>
-    <form action="/users/<%= animal.id %>/send_request">
+    <form action="/users/<%= animal.id %>/set_user">
       <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
     </form>
     <hr />
