@@ -40,6 +40,12 @@ get '/animals/for_adoption' do
   erb(:"animals/for_adoption")
 end
 
+#READ all users requests
+get '/requests' do
+  @requests = Request.all()
+  erb(:"animals/requests")
+end
+
 #Delete Animal
 post "/animals/:id/delete" do
   @animal = Animal.find(params[:id])

@@ -1,0 +1,16 @@
+<h2>This are all the request made by users:</h2>
+<hr>
+
+<% for request in @requests %>
+<p> Requested animal: <%= request.find_animal().name %> </p>
+<p> <img src="<%= request.find_animal().picture%>" alt="Animal picture">  </p>
+  <% if request.find_animal().adoptable == "t" %>
+    <p> Animal status: Adoptable </p>
+  <% elsif request.find_animal().adoptable == "f" %>
+    <p> Animal status: Non-Adoptable </p>
+  <% end  %>
+  <p> Request made by: <%= request.find_user().name %> </p>
+  <p> Comment: <%= request.comment %> </p>
+  <p> Contact Details: <%= request.find_user().contact_details %> </p>
+<hr />
+<%end  %>
