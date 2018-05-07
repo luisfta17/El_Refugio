@@ -38,11 +38,11 @@ class User
   end
 
   def update()
-  sql = "UPDATE users SET ( name, contact_details) = ($1, $2) WHERE id = $3"
-  values = [@name, @contact_details, @id]
-  SqlRunner.run( sql, values )
+    sql = "UPDATE users SET ( name, contact_details) = ($1, $2) WHERE id = $3"
+    values = [@name, @contact_details, @id]
+    SqlRunner.run( sql, values )
   end
-  
+
   def create_request(animal, text)
     request = {
       "user_id" => self.id,
@@ -56,14 +56,14 @@ class User
 
   #CLASS METHODS
 
-    def self.all()
-      sql = "SELECT * FROM users"
-      users = SqlRunner.run( sql )
-      result = users.map { |user| User.new( user ) }
-      return result
-    end
+  def self.all()
+    sql = "SELECT * FROM users"
+    users = SqlRunner.run( sql )
+    result = users.map { |user| User.new( user ) }
+    return result
+  end
 
-    def self.delete_all
+  def self.delete_all
     sql = "DELETE FROM users"
     SqlRunner.run( sql )
   end

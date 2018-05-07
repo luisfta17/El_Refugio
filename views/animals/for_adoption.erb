@@ -21,13 +21,13 @@
       <input type="submit" value="Delete animal">
     </form>
     <% if animal.adoptable == "t" %>
-    <form method="post" action="/animals/<%= animal.id %>/nonadoptable">
-      <input type="submit" value="Set animal as non-adoptable">
-    </form>
+      <form method="post" action="/animals/<%= animal.id %>/nonadoptable">
+        <input type="submit" value="Set animal as non-adoptable">
+      </form>
     <% else %>
-    <form method="post" action="/animals/<%= animal.id %>/adoptable">
-      <input type="submit" value="Set animal as adoptable">
-    </form>
+      <form method="post" action="/animals/<%= animal.id %>/adoptable">
+        <input type="submit" value="Set animal as adoptable">
+      </form>
     <% end %>
 
     <hr />

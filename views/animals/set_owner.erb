@@ -6,11 +6,11 @@
 
 <h2>Here's the list of all the registered owners in the shelter:</h2>
 <% for owner in @owners %>
-<p>Full Name: <%= owner.name %></p>
-<p>Contact Details: <%= owner.contact_details %></p>
+  <p>Full Name: <%= owner.name %></p>
+  <p>Contact Details: <%= owner.contact_details %></p>
 
-<form method="post" action="/animals/<%= @animal.id %>/set_owner/<%= owner.id %>/created">
-  <input type="submit" value="Set owner!">
-</form>
-<hr />
+  <form method="post" action="/animals/<%= @animal.id %>/set_owner/<%= owner.id %>/created">
+    <input type="submit" value="Set owner!">
+  </form>
+  <hr />
 <%end  %>

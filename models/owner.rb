@@ -11,20 +11,20 @@ class Owner
   end
 
   def save()
-  sql = "INSERT INTO owners
-  (
-    name,
-    contact_details
-  )
-  VALUES
-  (
-    $1, $2
-  )
-  RETURNING *"
-  values = [@name, @contact_details]
-  owner_data = SqlRunner.run(sql, values)
-  @id = owner_data.first()['id'].to_i
-end
+    sql = "INSERT INTO owners
+    (
+      name,
+      contact_details
+    )
+    VALUES
+    (
+      $1, $2
+    )
+    RETURNING *"
+    values = [@name, @contact_details]
+    owner_data = SqlRunner.run(sql, values)
+    @id = owner_data.first()['id'].to_i
+  end
 
 
   def delete()
@@ -34,21 +34,21 @@ end
   end
 
   def update()
-  sql = "UPDATE owners SET ( name, contact_details) = ($1, $2) WHERE id = $3"
-  values = [@name, @contact_details, @id]
-  SqlRunner.run( sql, values )
+    sql = "UPDATE owners SET ( name, contact_details) = ($1, $2) WHERE id = $3"
+    values = [@name, @contact_details, @id]
+    SqlRunner.run( sql, values )
   end
 
   #CLASS METHODS
 
-    def self.all()
-      sql = "SELECT * FROM owners"
-      owners = SqlRunner.run( sql )
-      result = owners.map { |owner| Owner.new( owner ) }
-      return result
-    end
+  def self.all()
+    sql = "SELECT * FROM owners"
+    owners = SqlRunner.run( sql )
+    result = owners.map { |owner| Owner.new( owner ) }
+    return result
+  end
 
-    def self.delete_all
+  def self.delete_all
     sql = "DELETE FROM owners"
     SqlRunner.run( sql )
   end
@@ -60,5 +60,4 @@ end
     result = Owner.new( owner.first )
     return result
   end
-
 end

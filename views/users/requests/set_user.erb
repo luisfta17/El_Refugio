@@ -6,11 +6,11 @@
 
 <h2>Before sending the request please login:</h2>
 <% for user in @users %>
-<p>Full Name: <%= user.name %></p>
-<p>Contact Details: <%= user.contact_details %></p>
+  <p>Full Name: <%= user.name %></p>
+  <p>Contact Details: <%= user.contact_details %></p>
 
-<form method="get" action="/users/animals/<%= @animal.id %>/set_user/<%= user.id %>/set_comment">
-  <input type="submit" value="Login!">
-</form>
-<hr />
+  <form method="get" action="/users/animals/<%= @animal.id %>/set_user/<%= user.id %>/set_comment">
+    <input type="submit" value="Login!">
+  </form>
+  <hr />
 <%end  %>

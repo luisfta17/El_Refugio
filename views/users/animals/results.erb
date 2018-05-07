@@ -1,25 +1,25 @@
 <h2>This are your results</h2>
 <hr>
 <% for animal in @animals %>
-<p>Name: <%= animal.name %></p>
-<p>Type: <%= animal.find_type() %></p>
-<p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
-<p>Age: <%= animal.age %></p>
+  <p>Name: <%= animal.name %></p>
+  <p>Type: <%= animal.find_type() %></p>
+  <p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
+  <p>Age: <%= animal.age %></p>
 <% if animal.adopted == "f" %>
-<p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
+  <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
 <% else  %>
-<p> <%= animal.name %> was in El Refugio from <%= animal.admision_date %> until <%= animal.find_adoption_info().adoption_date %> </p>
+  <p> <%= animal.name %> was in El Refugio from <%= animal.admision_date %> until <%= animal.find_adoption_info().adoption_date %> </p>
 <% end  %>
 <% if animal.check_adoptability_web %>
- <p> <%= animal.name %> is adoptable!</p>
- <form action="/users/animals/<%= animal.id %>/set_user">
-   <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
- </form>
+   <p> <%= animal.name %> is adoptable!</p>
+   <form action="/users/animals/<%= animal.id %>/set_user">
+     <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
+   </form>
  <% elsif animal.adoptable == "f" && animal.adopted == "f" %>
- <form action="/users/animals/<%= animal.id %>/set_user">
-   <p> Although <%= animal.name  %> is not ready for adoption yet, you can still send a request of adoption and we will get in touch as soon this <%= animal.find_type() %> is available </p>
-   <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
- </form>
+   <form action="/users/animals/<%= animal.id %>/set_user">
+     <p> Although <%= animal.name  %> is not ready for adoption yet, you can still send a request of adoption and we will get in touch as soon this <%= animal.find_type() %> is available </p>
+     <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
+   </form>
 <% end %>
 
 

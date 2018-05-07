@@ -6,7 +6,7 @@
 <label for="type_id"> Select a type of animal:</label>
 <select name="type_id" id="type_id">
 <% for type in @types %>
-<option value="<%= type.id %>"> <%= type.name %></option>
+  <option value="<%= type.id %>"> <%= type.name %></option>
 <%end  %>
 </select>
 

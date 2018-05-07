@@ -6,7 +6,7 @@
   <label for="type_id"> Select a type of animal:</label>
   <select name="type_id" id="type_id">
   <% for type in @types %>
-  <option value="<%= type.id %>"> <%= type.name %></option>
+    <option value="<%= type.id %>"> <%= type.name %></option>
   <%end  %>
   </select>
 
@@ -21,12 +21,12 @@
 
   <label for="adoptable"> Is this animal ready for adoption?</label>
   <select name="adoptable" id="adoptable">
-    <% if @animal_to_update.adoptable == "t" %>
-  <option selected value= true> Yes </option>
-  <option value= false> not yet </option>
+  <% if @animal_to_update.adoptable == "t" %>
+    <option selected value= true> Yes </option>
+    <option value= false> not yet </option>
   <% else %>
-  <option value= true> Yes </option>
-  <option selected value= false> not yet </option>
+    <option value= true> Yes </option>
+    <option selected value= false> not yet </option>
   <% end  %>
   </select>
 

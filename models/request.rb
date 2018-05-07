@@ -12,21 +12,21 @@ class Request
   end
 
   def save()
-  sql = "INSERT INTO requests
-  (
-    user_id,
-    animal_id,
-    comment
-  )
-  VALUES
-  (
-    $1, $2, $3
-  )
-  RETURNING *"
-  values = [@user_id, @animal_id, @comment]
-  request_data = SqlRunner.run(sql, values)
-  @id = request_data.first()['id'].to_i
-end
+    sql = "INSERT INTO requests
+    (
+      user_id,
+      animal_id,
+      comment
+    )
+    VALUES
+    (
+      $1, $2, $3
+    )
+    RETURNING *"
+    values = [@user_id, @animal_id, @comment]
+    request_data = SqlRunner.run(sql, values)
+    @id = request_data.first()['id'].to_i
+  end
 
 
   def delete()
@@ -36,9 +36,9 @@ end
   end
 
   def update()
-  sql = "UPDATE requests SET ( user_id, animal_id, comment) = ($1, $2, $3) WHERE id = $4"
-  values = [@user_id, @animal_id, @comment, @id]
-  SqlRunner.run( sql, values )
+    sql = "UPDATE requests SET ( user_id, animal_id, comment) = ($1, $2, $3) WHERE id = $4"
+    values = [@user_id, @animal_id, @comment, @id]
+    SqlRunner.run( sql, values )
   end
 
   def find_animal()
@@ -59,14 +59,14 @@ end
 
   #CLASS METHODS
 
-    def self.all()
-      sql = "SELECT * FROM requests"
-      requests = SqlRunner.run( sql )
-      result = requests.map { |request| Request.new( request ) }
-      return result
-    end
+  def self.all()
+    sql = "SELECT * FROM requests"
+    requests = SqlRunner.run( sql )
+    result = requests.map { |request| Request.new( request ) }
+    return result
+  end
 
-    def self.delete_all
+  def self.delete_all
     sql = "DELETE FROM requests"
     SqlRunner.run( sql )
   end
@@ -78,5 +78,4 @@ end
     result = Request.new( request.first )
     return result
   end
-
 end

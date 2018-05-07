@@ -2,10 +2,10 @@
 <hr>
 
 <% for adopted in @adopteds %>
-<p> <img src="<%= adopted.find_animal().picture%>" alt="Animal picture">  </p>
-<p> This is <%= adopted.find_animal().name %> and it is a <%= adopted.find_animal().age %> years old <%= adopted.find_animal().find_type() %> </p>
-<p> This <%= adopted.find_animal().find_type() %> was adopted by <%= adopted.find_owner().name %> on <%= adopted.adoption_date %></p>
-<hr />
+  <p> <img src="<%= adopted.find_animal().picture%>" alt="Animal picture">  </p>
+  <p> This is <%= adopted.find_animal().name %> and it is a <%= adopted.find_animal().age %> years old <%= adopted.find_animal().find_type() %> </p>
+  <p> This <%= adopted.find_animal().find_type() %> was adopted by <%= adopted.find_owner().name %> on <%= adopted.adoption_date %></p>
+  <hr />
 <%end  %>
 <div class= "centered" >
   <p> Be a nice person, be like them and adopt animals!</p>
