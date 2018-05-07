@@ -222,7 +222,7 @@ end
 
 post "/users/animals/:id/set_user/:userid/set_comment/:comment/created" do
 @animal = Animal.find(params[:id])
-@user = Owner.find(params[:userid])
+@user = User.find(params[:userid])
 @user.create_request(@animal, params[:comment])
 erb(:"users/requests/request_created", :layout => :user_layout)
 end
