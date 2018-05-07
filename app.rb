@@ -220,7 +220,7 @@ get "/users/animals/:id/set_user/:userid/set_comment" do
 erb(:"users/requests/set_comment", :layout => :user_layout)
 end
 
-post "/users/animals/:id/set_user/:userid/set_comment/:comment/created" do
+post "/users/animals/:id/set_user/:userid/requests" do
 @animal = Animal.find(params[:id])
 @user = User.find(params[:userid])
 @user.create_request(@animal, params[:comment])
