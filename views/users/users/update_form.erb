@@ -1,0 +1,9 @@
+<form method="post" action="/users/edit/<%= @user_to_update.id %>">
+
+  <label for="name"> Name:</label>
+  <input type="text" name="name" id="name"  value="<%= @user_to_update.name %>">
+
+  <label for="contact_details"> Contact Details:</label>
+  <input type="text" name="contact_details" id="contact_details"  value="<%= @user_to_update.contact_details %>">
+  <input type="submit" value="Update profile">
+</form>

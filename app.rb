@@ -209,6 +209,23 @@ post "/users/new_user/created" do
   erb(:"users/users/created", :layout => :user_layout)
 end
 
+# UPDATE existing user
+get "/users/edit" do
+  @users = User.all
+  erb(:"users/users/update", :layout => :user_layout)
+end
+
+get "/users/edit/:id" do
+  @user_to_update = User.find(params[:id])
+  erb(:"users/users/update_form", :layout => :user_layout)
+end
+
+post "/users/edit/:id" do
+  @user_to_update = User.new(params)
+  @user_to_update.update()
+  redirect "/users/edit"
+end
+
 
 # REQUEST
 # CREATE user animal Request
