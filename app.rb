@@ -154,3 +154,14 @@ get "/adoptions" do
   @adopteds = Adopted_animal.all
   erb(:"adoptions/index")
 end
+
+
+# USER SIDE app
+
+#READ all animals
+get '/users/animals' do
+  @animals = Animal.all()
+  @adopteds = Adopted_animal.all()
+  @owners = Owner.all()
+  erb(:"users/animals/index", :layout => :user_layout)
+end
