@@ -165,3 +165,9 @@ get '/users/animals' do
   @owners = Owner.all()
   erb(:"users/animals/index", :layout => :user_layout)
 end
+
+#READ all animals ready for adoption
+get '/users/animals/for_adoption' do
+  @animals = Animal.all()
+  erb(:"users/animals/for_adoption", :layout => :user_layout)
+end

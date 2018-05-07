@@ -1,0 +1,17 @@
+<h2>A list of all our animals ready for adoption:</h2>
+<hr>
+
+<% for animal in @animals %>
+  <% if animal.check_adoptability_web %>
+    <p>Name: <%= animal.name %></p>
+    <p>Type: <%= animal.find_type() %></p>
+    <p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
+    <p>Age: <%= animal.age %></p>
+    <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
+    <p> <%= animal.name %> is adoptable!</p>
+    <form action="/users/<%= animal.id %>/send_request">
+      <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
+    </form>
+    <hr />
+  <%end  %>
+<%end  %>
