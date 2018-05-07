@@ -5,6 +5,8 @@ require_relative('./models/adopted_animal')
 require_relative('./models/animal')
 require_relative('./models/owner')
 require_relative('./models/type_of_animal')
+require_relative('./models/user')
+require_relative('./models/request')
 
 #WELCOME PAGE
 get "/" do
@@ -187,4 +189,16 @@ end
 get '/users/animals/find/:id' do
   @animals = Type_of_animal.find_animals_by_type_id(params[:id])
   erb(:"users/animals/results", :layout => :user_layout)
+end
+
+# CREATE a new user
+get "/users/new_user" do
+  @users= User.all
+  erb(:"users/users/new", :layout => :user_layout)
+end
+
+post "/users/new_user/created" do
+  @user = User.new(params)
+  @user.save()
+  erb(:"users/users/created", :layout => :user_layout)
 end
