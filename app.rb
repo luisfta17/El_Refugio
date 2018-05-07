@@ -171,3 +171,9 @@ get '/users/animals/for_adoption' do
   @animals = Animal.all()
   erb(:"users/animals/for_adoption", :layout => :user_layout)
 end
+
+#READ all animals NOT ready for adoption
+get '/users/animals/not_ready' do
+  @animals = Animal.all()
+  erb(:"users/animals/not_ready", :layout => :user_layout)
+end

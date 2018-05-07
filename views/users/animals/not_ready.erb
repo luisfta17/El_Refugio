@@ -1,0 +1,18 @@
+<h2>Here you can find all our animals that are still in training / vet care. </h2>
+<hr>
+
+<% for animal in @animals %>
+  <% if animal.adoptable == "f" && animal.adopted == "f" %>
+    <p>Name: <%= animal.name %></p>
+    <p>Type: <%= animal.find_type() %></p>
+    <p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
+    <p>Age: <%= animal.age %></p>
+    <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
+    <p> <%= animal.name %> is adoptable!</p>
+    <form action="/users/<%= animal.id %>/send_request">
+      <p> Although <%= animal.name  %> is not ready for adoption yet, you can still send a request of adoption and we will get in touch as soon this <%= animal.find_type() %> is available </p>
+      <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
+    </form>
+    <hr />
+  <%end  %>
+<%end  %>
