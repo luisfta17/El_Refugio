@@ -3,7 +3,7 @@
 
 <!-- <form action="/animals" method="get">
     <select class="" name="query">
-      
+
     </select>
 </form> -->
 
@@ -26,7 +26,7 @@
    <% elsif animal.adoptable == "f" && animal.adopted == "f" %>
     <p> <%= animal.name %> is not ready for adoption yet!</p>
    <% elsif animal.adoptable == "f" && animal.adopted == "t" %>
-    <p> <%= animal.name %> was adopted by <%= Adopted_animal.find_owner_by_animal_id(animal.id).name%></p>
+    <p> <%= animal.name %> was adopted by <%= animal.find_owner().name%></p>
   <% end %>
 
   <form action="/animals/<%= animal.id %>/update">

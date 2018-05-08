@@ -110,6 +110,14 @@ class Animal
     return result
   end
 
+  def find_owner()
+    sql = "SELECT owners.* FROM owners INNER JOIN adopted_animals ON owners.id = adopted_animals.owner_id WHERE adopted_animals.animal_id = $1 "
+    values = [@id]
+    owner = SqlRunner.run( sql, values )
+    result = Owner.new( owner.first )
+    return result
+  end
+
   #CLASS METHODS
 
   def self.all()
