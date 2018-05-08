@@ -39,6 +39,14 @@ class Owner
     SqlRunner.run( sql, values )
   end
 
+  def have_adopted()
+    sql = "SELECT * FROM adopted_animals WHERE owner_id = $1"
+    values = [@id]
+    adoption_info = SqlRunner.run(sql, values)
+    result = adoption_info.map { |adoption| Adopted_animal.new (adoption)}
+    return result.length > 0
+  end
+
   #CLASS METHODS
 
   def self.all()
