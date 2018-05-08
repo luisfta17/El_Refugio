@@ -1,9 +1,0 @@
-<h2>This are all the different types of animals that are in the shelter, please select one option:</h2>
-<hr>
-<% for type in @types %>
-  <p> <%= type.name  %>'s</p>
-  <form method="get" action="/animals/find/<%= type.id %>">
-    <input type="submit" value="Find <%= type.name  %>'s'">
-  </form>
-<%end  %>
-  </select>
