@@ -79,7 +79,7 @@ post "/animals/:id/set_owner/:ownerid" do
 @animal = Animal.find(params[:id])
 @owner = Owner.find(params[:ownerid])
 @animal.adopted_by(@owner)
-redirect "/adoptions"
+erb(:"animals/adopted")
 end
 
 # UPDATE existing animals
