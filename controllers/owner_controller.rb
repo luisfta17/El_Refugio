@@ -18,7 +18,7 @@ get '/owners' do
 end
 
 # CREATE a new Owner
-get "/owners/newowner" do
+get "/owners/new_owner" do
   @owners= Owner.all
   erb(:"owners/new")
 end
@@ -37,12 +37,12 @@ post "/owners/:id/delete" do
 end
 
 # UPDATE existing owners
-get "/owners/:id/update" do
+get "/owners/:id/edit" do
   @owner_to_update = Owner.find(params[:id])
-  erb(:"owners/update")
+  erb(:"owners/edit")
 end
 
-post "/owners/:id/updated" do
+post "/owners/:id" do
   @owner_to_update = Owner.new(params)
   @owner_to_update.update()
   redirect "/owners"
