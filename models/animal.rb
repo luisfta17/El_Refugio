@@ -127,6 +127,14 @@ class Animal
     return result
   end
 
+  def self.find_by_adoptability(value)
+    sql = "SELECT * FROM animals where adoptable = $1"
+    values = [value]
+    animals = SqlRunner.run( sql, values )
+    result = animals.map { |animal| Animal.new( animal ) }
+    return result
+  end
+
   def self.delete_all
     sql = "DELETE FROM animals"
     SqlRunner.run( sql )
@@ -147,4 +155,25 @@ class Animal
     result = animal_data.map { |animal| Animal.new( animal ) }
     return result
   end
+
+  def self.filter_for_adoptable(array)
+    result = []
+    for animal in array
+      if animal.adoptable == "t"
+        result.push(animal)
+      end
+    end
+    return result
+  end
+
+  def self.filter_for_nonadoptable(array)
+    result = []
+    for animal in array
+      if animal.adoptable == "f"
+        result.push(animal)
+      end
+    end
+    return result
+  end
+
 end

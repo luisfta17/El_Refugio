@@ -14,14 +14,18 @@ require_relative('../models/request')
 #READ all animals
 get '/animals' do
   @types = Type_of_animal.all
-  if params[:type]
-    @animals = Animal.find_animals_by_type_id(params[:type])
+  if params[:type] && params[:adoptable] == "true"
+    @animals_by_type = Animal.find_animals_by_type_id(params[:type])
+    @animals = Animal.filter_for_adoptable(@animals_by_type)
+  elsif params[:type] && params[:adoptable] == "false"
+    @animals_by_type = Animal.find_animals_by_type_id(params[:type])
+    @animals = Animal.filter_for_nonadoptable(@animals_by_type)
   else
     @animals = Animal.all()
   end
   @adopteds = Adopted_animal.all()
   @owners = Owner.all()
-  erb(:"animals/index", :layout => :layout)
+  erb(:"animals/index")
 end
 
 #READ animals by type

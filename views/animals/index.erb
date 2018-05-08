@@ -1,7 +1,7 @@
 <h2>Hello there! here you will find all the animals that are in the shelter</h2>
 
 
-<form action="/animals" method="get">
+<form class= "inline" action="/animals" method="get">
   <p class= "inline"> Find animals by:</p>
     <select class= "inline" name="type">
     <% for type in @types %>
@@ -14,7 +14,9 @@
     </select>
       <input class= "inline" type="submit" value="Find">
 </form>
-
+<form class= "inline" action="/animals" method="get">
+  <input class= "inline" type="submit" value="See All Animals">
+</form>
 <hr>
 <% for animal in @animals %>
   <p>Name: <%= animal.name %></p>
