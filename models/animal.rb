@@ -83,6 +83,14 @@ class Animal
     end
   end
 
+  def check_adopted_false()
+    return self.adoptable == "f" && self.adopted == "f"
+  end
+
+  def check_adopted_true()
+    return self.adoptable == "f" && self.adopted == "t"
+  end
+
   def change_adoptability()
     @adopted = true
     @adoptable = false

@@ -33,9 +33,9 @@
      <form action="/animals/<%= animal.id %>/set_owner">
        <input type="submit" value="Set an owner to this animal!">
      </form>
-   <% elsif animal.adoptable == "f" && animal.adopted == "f" %>
+   <% elsif animal.check_adopted_false() %>
     <p> <%= animal.name %> is not ready for adoption yet!</p>
-   <% elsif animal.adoptable == "f" && animal.adopted == "t" %>
+   <% elsif animal.check_adopted_true() %>
     <p> <%= animal.name %> was adopted by <%= animal.find_owner().name%></p>
   <% end %>
 
