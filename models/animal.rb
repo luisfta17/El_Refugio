@@ -15,8 +15,8 @@ class Animal
     @age = options["age"].to_i
     @admision_date = options["admision_date"]
     @picture = options["picture"]
-    @adoptable = options["adoptable"]
-    @adopted = options["adopted"]
+    @adoptable = options["adoptable"]  #== "f"
+    @adopted = options["adopted"] #== "t"
   end
 
   def save()
@@ -76,11 +76,7 @@ class Animal
   end
 
   def check_adoptability_web() #when object comes back from db boolean is "t" or "f"
-    if self.adoptable == "t" && self.adopted == "f"
-      return true
-    else
-      return false
-    end
+    return self.adoptable == "t" && self.adopted == "f"
   end
 
   def check_adopted_false()
