@@ -4,7 +4,6 @@ require('pry-byebug')
 require_relative('controllers/adoptions_controller')
 require_relative('controllers/animal_controller')
 require_relative('controllers/owner_controller')
-require_relative('controllers/type_of_animal_controller')
 require_relative('controllers/user_controller')
 require_relative('controllers/request_controller')
 

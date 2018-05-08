@@ -48,7 +48,7 @@ get "/users/new_user" do
   erb(:"users/users/new", :layout => :user_layout)
 end
 
-post "/users/new_user/created" do
+post "/users/new_user" do
   @user = User.new(params)
   @user.save()
   erb(:"users/users/created", :layout => :user_layout)
