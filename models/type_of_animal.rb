@@ -48,7 +48,7 @@ class Type_of_animal
     sql = "DELETE FROM types_of_animals"
     SqlRunner.run( sql )
   end
-
+  
   def self.find_animals_by_type_id(id)
     sql = "SELECT * FROM animals WHERE type_id = $1"
     values = [id]
@@ -56,4 +56,5 @@ class Type_of_animal
     result = animal_data.map { |animal| Animal.new( animal ) }
     return result
   end
+
 end

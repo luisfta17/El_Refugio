@@ -1,13 +1,21 @@
 <h2>Hello there! here you will find all the animals that are in the shelter</h2>
-<hr>
 
-<!-- <form action="/animals" method="get">
-    <select class="" name="query">
 
+<form action="/animals" method="get">
+  <p class= "inline"> Find animals by:</p>
+    <select class= "inline" name="type">
+    <% for type in @types %>
+      <option value="<%= type.id %>"> <%= type.name %></option>
+    <%end  %>
     </select>
-</form> -->
+    <select name="adoptable" id="adoptable">
+    <option value= true> Adoptable </option>
+    <option value= false> Not adoptable yet</option>
+    </select>
+      <input class= "inline" type="submit" value="Find">
+</form>
 
-
+<hr>
 <% for animal in @animals %>
   <p>Name: <%= animal.name %></p>
   <p>Type: <%= animal.find_type() %></p>

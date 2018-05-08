@@ -139,4 +139,12 @@ class Animal
     result = Animal.new( animal.first )
     return result
   end
+
+  def self.find_animals_by_type_id(id)
+    sql = "SELECT * FROM animals WHERE type_id = $1"
+    values = [id]
+    animal_data = SqlRunner.run(sql, values)
+    result = animal_data.map { |animal| Animal.new( animal ) }
+    return result
+  end
 end

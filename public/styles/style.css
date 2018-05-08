@@ -25,3 +25,7 @@ h2  {
 .centered {
   text-align: center !important;
 }
+
+.inline {
+  display: inline !important;
+}
