@@ -1,25 +1,25 @@
-<form method="post" action="/animals">
+<form class="centered" method="post" action="/animals">
 
-<label for="name"> Name:</label>
+<label class= "block" for="name"> Name:</label>
 <input type="text" name="name" id="name"  placeholder="put the animal name here">
 
-<label for="type_id"> Select a type of animal:</label>
+<label class= "block"for="type_id"> Select a type of animal:</label>
 <select name="type_id" id="type_id">
 <% for type in @types %>
   <option value="<%= type.id %>"> <%= type.name %></option>
 <%end  %>
 </select>
 
-<label for="age">Age: </label>
+<label class= "block" for="age">Age: </label>
 <input type="number" name="age" id="age">
 
-<label for="admision_date">Admision date: </label>
+<label class= "block" for="admision_date">Admision date: </label>
 <input type="date" name="admision_date" id="admision_date">
 
-<label for="picture"> Add picture Link:</label>
+<label class= "block" for="picture"> Add picture Link:</label>
 <input type="text" name="picture" id="picture"  placeholder="Add picture link here">
 
-<label for="adoptable"> Is this animal ready for adoption?</label>
+<label class= "block" for="adoptable"> Is this animal ready for adoption?</label>
 <select name="adoptable" id="adoptable">
 <option value= true> Yes </option>
 <option value= false> not yet </option>
@@ -31,6 +31,8 @@
     <option selected value = false > not yet </option>
   </select>
 </div>
-
+<div class="block">
 <input type="submit" value="Register new Animal">
+</div>
+
 </form>
