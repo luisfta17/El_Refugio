@@ -13,6 +13,8 @@
   <form method="post" action="/owners/<%= owner.id %>/delete">
     <input type="submit" value="Delete Owner">
   </form>
+    <% else  %>
+    <p> You can't delete an owner who has an adoption. </p>
   <% end  %>
   <hr />
 <%end  %>
