@@ -21,7 +21,7 @@
     <p> <%= animal.name %> was adopted by <%= Adopted_animal.find_owner_by_animal_id(animal.id).name%></p>
   <% end %>
 
-  <form action="/animals/<%= animal.id %>/update">
+  <form action="/animals/<%= animal.id %>/edit">
     <input type="submit" value="Edit this animal">
   </form>
 

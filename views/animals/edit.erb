@@ -1,4 +1,4 @@
-<form method="post" action="/animals/<%= @animal_to_update.id %>/updated">
+<form method="post" action="/animals/<%= @animal_to_update.id %>">
 
   <label for="name"> Name:</label>
   <input type="text" name="name" id="name"  value="<%= @animal_to_update.name %>">
@@ -30,12 +30,13 @@
   <% end  %>
   </select>
 
-  <label for="adopted"> Is this animal adopted?</label>
-  <select name="adopted" id="adopted">
-    <option selected value = false > not yet </option>
-    <option selected value = true > Yes </option>
-  </select>
-
+  <div class="hide">
+    <label for="adopted"> Is this animal adopted?</label>
+    <select name="adopted" id="adopted">
+      <option value = false  <%= "selected" if @animal_to_update.adopted == "f" %> > not yet </option>
+      <option value = true  <%= "selected" if @animal_to_update.adopted == "t" %> > Yes </option>
+    </select>
+  </div>
 
   <input type="submit" value="Update Animal">
 </form>

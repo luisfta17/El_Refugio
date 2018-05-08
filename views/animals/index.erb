@@ -29,7 +29,7 @@
     <p> <%= animal.name %> was adopted by <%= animal.find_owner().name%></p>
   <% end %>
 
-  <form action="/animals/<%= animal.id %>/update">
+  <form action="/animals/<%= animal.id %>/edit">
     <input type="submit" value="Edit this animal">
   </form>
 
@@ -38,7 +38,7 @@
   </form>
 
   <% if animal.adoptable == "t" && animal.adopted == "f" %>
-    <form method="post" action="/animals/<%= animal.id %>/nonadoptable">
+    <form method="post" action="/animals/<%= animal.id %>/non_adoptable">
       <input type="submit" value="Set animal as non-adoptable">
     </form>
   <% elsif animal.adoptable == "f" && animal.adopted == "f" %>

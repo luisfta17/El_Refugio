@@ -66,7 +66,7 @@ end
 
 # UPDATE animal as non-adoptable
 
-post "/animals/:id/nonadoptable" do
+post "/animals/:id/non_adoptable" do
   @animal = Animal.find(params[:id])
   @animal.adoptable = false
   @animal.update()
@@ -91,7 +91,7 @@ get "/animals/:id/set_owner" do
   erb(:"animals/set_owner")
 end
 
-post "/animals/:id/set_owner/:ownerid/created" do
+post "/animals/:id/set_owner/:ownerid" do
 @animal = Animal.find(params[:id])
 @owner = Owner.find(params[:ownerid])
 @animal.adopted_by(@owner)
@@ -99,13 +99,13 @@ redirect "/adoptions"
 end
 
 # UPDATE existing animals
-get "/animals/:id/update" do
+get "/animals/:id/edit" do
   @animal_to_update = Animal.find(params[:id])
   @types = Type_of_animal.all
-  erb(:"animals/update")
+  erb(:"animals/edit")
 end
 
-post "/animals/:id/updated" do
+post "/animals/:id" do
   @animal_to_update = Animal.new(params)
   @animal_to_update.update()
   redirect "/animals"
