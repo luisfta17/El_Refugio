@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-require_relative('controllers/adopted_animal_controller')
+require_relative('controllers/adoptions_controller')
 require_relative('controllers/animal_controller')
 require_relative('controllers/owner_controller')
 require_relative('controllers/type_of_animal_controller')

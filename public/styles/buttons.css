@@ -3,4 +3,9 @@
   padding: 20px 20px;
   cursor:pointer;
   font-size: 20px;
+  display: inline;
+  background-color: papayawhip;
+  text-decoration: none !important;
+  margin: 0.25em;
+  margin-top: 1em;
 }
