@@ -1,42 +1,45 @@
-<form method="post" action="/animals/<%= @animal_to_update.id %>">
+<div class="registration-form">
+  <form class="centered" method="post" action="/animals/<%= @animal_to_update.id %>">
 
-  <label for="name"> Name:</label>
-  <input type="text" name="name" id="name"  value="<%= @animal_to_update.name %>">
+    <label class="block" for="name"> Name:</label>
+    <input type="text" name="name" id="name"  value="<%= @animal_to_update.name %>">
 
-  <label for="type_id"> Select a type of animal:</label>
-  <select name="type_id" id="type_id">
-  <% for type in @types %>
-    <option value="<%= type.id %>"> <%= type.name %></option>
-  <%end  %>
-  </select>
-
-  <label for="age">Age: </label>
-  <input type="number" name="age" value= "<%= @animal_to_update.age %>" id="age">
-
-  <label for="admision_date">Admision date: </label>
-  <input type="date" name="admision_date" id="admision_date" value="<%= @animal_to_update.admision_date %>">
-
-  <label for="picture"> Add picture Link:</label>
-  <input type="text" name="picture" id="picture"  value="<%= @animal_to_update.picture %>">
-
-  <label for="adoptable"> Is this animal ready for adoption?</label>
-  <select name="adoptable" id="adoptable">
-  <% if @animal_to_update.adoptable == "t" %>
-    <option selected value= true> Yes </option>
-    <option value= false> not yet </option>
-  <% else %>
-    <option value= true> Yes </option>
-    <option selected value= false> not yet </option>
-  <% end  %>
-  </select>
-
-  <div class="hide">
-    <label for="adopted"> Is this animal adopted?</label>
-    <select name="adopted" id="adopted">
-      <option value = false  <%= "selected" if @animal_to_update.adopted == "f" %> > not yet </option>
-      <option value = true  <%= "selected" if @animal_to_update.adopted == "t" %> > Yes </option>
+    <label class="block" for="type_id"> Select a type of animal:</label>
+    <select name="type_id" id="type_id">
+    <% for type in @types %>
+      <option value="<%= type.id %>"> <%= type.name %></option>
+    <%end  %>
     </select>
-  </div>
 
-  <input type="submit" value="Update Animal">
-</form>
+    <label class="block" for="age">Age: </label>
+    <input type="number" name="age" value= "<%= @animal_to_update.age %>" id="age">
+
+    <label class="block" for="admision_date">Admision date: </label>
+    <input type="date" name="admision_date" id="admision_date" value="<%= @animal_to_update.admision_date %>">
+
+    <label class="block" for="picture"> Add picture Link:</label>
+    <input type="text" name="picture" id="picture"  value="<%= @animal_to_update.picture %>">
+
+    <label  class="block" for="adoptable"> Is this animal ready for adoption?</label>
+    <select name="adoptable" id="adoptable">
+    <% if @animal_to_update.adoptable == "t" %>
+      <option selected value= true> Yes </option>
+      <option value= false> not yet </option>
+    <% else %>
+      <option value= true> Yes </option>
+      <option selected value= false> not yet </option>
+    <% end  %>
+    </select>
+
+    <div class="hide">
+      <label for="adopted"> Is this animal adopted?</label>
+      <select name="adopted" id="adopted">
+        <option value = false  <%= "selected" if @animal_to_update.adopted == "f" %> > not yet </option>
+        <option value = true  <%= "selected" if @animal_to_update.adopted == "t" %> > Yes </option>
+      </select>
+    </div>
+    <div class="block">
+      <input type="submit" value="Update Animal">
+    </div>
+  </form>
+</div>
