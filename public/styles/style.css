@@ -61,3 +61,13 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.registration-form {
+  padding-top: 1px;
+  background-color: #272727;
+  width: 40%;
+  height: 50%;
+  margin-left: 350px;
+  margin-top: 100px;
+  color: white;
+}
