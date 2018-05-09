@@ -1,16 +1,18 @@
-<h2> You are about to send a request for <%= @animal.name%> </h2>
-<p> Age: <%= @animal.age %></p>
-<p> Type: <%= @animal.find_type() %></p>
-<p> <img src="<%= @animal.picture%>" alt="Animal picture">  </p>
-<hr>
+<div class="container centered">
+  <h2> You are about to send a request for <%= @animal.name%> </h2>
+  <p> Age: <%= @animal.age %></p>
+  <p> Type: <%= @animal.find_type() %></p>
+  <p> <img src="<%= @animal.picture%>" alt="Animal picture">  </p>
+  <hr>
 
-<h2>Before sending the request please login:</h2>
-<% for user in @users %>
-  <p>Full Name: <%= user.name %></p>
-  <p>Contact Details: <%= user.contact_details %></p>
+  <h2>Before sending the request please login:</h2>
+  <% for user in @users %>
+    <p>Full Name: <%= user.name %></p>
+    <p>Contact Details: <%= user.contact_details %></p>
 
-  <form method="get" action="/users/animals/<%= @animal.id %>/set_user/<%= user.id %>/set_comment">
-    <input type="submit" value="Login!">
-  </form>
-  <hr />
-<%end  %>
+    <form method="get" action="/users/animals/<%= @animal.id %>/set_user/<%= user.id %>/set_comment">
+      <input type="submit" value="Login!">
+    </form>
+    <hr />
+  <%end  %>
+</div>

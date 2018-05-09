@@ -1,10 +1,12 @@
 nav {
   margin-bottom: 60px;
+  padding-left: 0px;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
+    margin-left: 0;
     padding: 0;
     overflow: hidden;
     background-color: #272727;
@@ -40,8 +42,11 @@ h2  {
 }
 
 body {
-  background: #00e7ff;
-
+  background: #CEB5A7;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  font-family: leto;
 }
 
 .hide {
@@ -75,10 +80,16 @@ body {
 }
 
 .container {
-  background: #FED766;
+  background: #272727;
   width: 50%;
   margin-left: 325px;
   border: solid white;
   border-radius: 1%;
+  color: white;
 }
-/* border: outset 2px silver; */
+.centerfield {
+  display: block;
+    margin-left: 30%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}

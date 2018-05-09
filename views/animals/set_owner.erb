@@ -1,16 +1,18 @@
-<h2> You are about to set an owner to <%= @animal.name%> </h2>
-<p> Age: <%= @animal.age %></p>
-<p> Type: <%= @animal.find_type() %></p>
-<p> <img src="<%= @animal.picture%>" alt="Animal picture">  </p>
-<hr>
+<div class="container centered">
+  <h2> You are about to set an owner to <%= @animal.name%> </h2>
+  <p> Age: <%= @animal.age %></p>
+  <p> Type: <%= @animal.find_type() %></p>
+  <p> <img src="<%= @animal.picture%>" alt="Animal picture">  </p>
+  <hr>
 
-<h2>Here's the list of all the registered owners in the shelter:</h2>
-<% for owner in @owners %>
-  <p>Full Name: <%= owner.name %></p>
-  <p>Contact Details: <%= owner.contact_details %></p>
+  <h2>Here's the list of all the registered owners in the shelter:</h2>
+  <% for owner in @owners %>
+    <p>Full Name: <%= owner.name %></p>
+    <p>Contact Details: <%= owner.contact_details %></p>
 
-  <form method="post" action="/animals/<%= @animal.id %>/set_owner/<%= owner.id %>">
-    <input type="submit" value="Set owner!">
-  </form>
-  <hr />
-<%end  %>
+    <form method="post" action="/animals/<%= @animal.id %>/set_owner/<%= owner.id %>">
+      <input type="submit" value="Set owner!">
+    </form>
+    <hr />
+  <%end  %>
+</div>
