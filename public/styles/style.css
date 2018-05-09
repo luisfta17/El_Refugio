@@ -46,9 +46,10 @@ h2  {
 
 body {
   /* background: #CEB5A7; */
+  background: #AF4034;
   /* background-image: radial-gradient(circle, #ceb5a7, #bfad9b, #afa692, #a09e8a, #909683); */
   /* background-image: radial-gradient(circle, #ceb5a7, #c1a89e, #b39b95, #a58f8c, #968383); */
-  background-image: radial-gradient(circle, #ceb5a7, #c3a697, #b79888, #ac8a79, #a17c6b);
+  /* background-image: radial-gradient(circle, #ceb5a7, #c3a697, #b79888, #ac8a79, #a17c6b); */
   margin: 0;
   background-size: cover;
   background-position: center;

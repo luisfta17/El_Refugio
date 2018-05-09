@@ -32,7 +32,7 @@
     <% if animal.check_adoptability_web %>
        <p> <%= animal.name %> is adoptable!</p>
        <form class= "inline" action="/animals/<%= animal.id %>/set_owner">
-         <input type="submit" value="Set an owner to this animal!">
+         <input class="light" type="submit" value="Set an owner">
        </form>
      <% elsif animal.check_adopted_false() %>
       <p> <%= animal.name %> is not ready for adoption yet!</p>
@@ -41,20 +41,20 @@
     <% end %>
 
     <form class= "inline" action="/animals/<%= animal.id %>/edit">
-      <input type="submit" value="Edit this animal">
+      <input class="light" type="submit" value="Edit">
     </form>
 
     <form class= "inline" method="post" action="/animals/<%= animal.id %>/delete">
-      <input type="submit" value="Delete animal">
+      <input class="light" type="submit" value="Delete">
     </form>
 
     <% if animal.adoptable == "t" && animal.adopted == "f" %>
       <form class= "inline" method="post" action="/animals/<%= animal.id %>/non_adoptable">
-        <input type="submit" value="Set animal as non-adoptable">
+        <input class="light" type="submit" value="Set animal as non-adoptable">
       </form>
     <% elsif animal.adoptable == "f" && animal.adopted == "f" %>
       <form class= "inline" method="post" action="/animals/<%= animal.id %>/adoptable">
-        <input type="submit" value="Set animal as adoptable">
+        <input class="light" type="submit" value="Set animal as adoptable">
       </form>
     <% end %>
 
