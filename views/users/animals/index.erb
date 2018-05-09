@@ -31,12 +31,12 @@
     <% if animal.check_adoptability_web %>
        <p> <%= animal.name %> is adoptable!</p>
        <form action="/users/animals/<%= animal.id %>/set_user">
-         <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
+         <input class="light" type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
        </form>
      <% elsif animal.check_adopted_false() %>
        <form action="/users/animals/<%= animal.id %>/set_user">
          <p> Although <%= animal.name  %> is not ready for adoption yet, you can still send a request of adoption and we will get in touch as soon this <%= animal.find_type() %> is available </p>
-         <input type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
+         <input class="light" type="submit" value="Send a request of adoption for this <%= animal.find_type() %>!">
        </form>
     <% end %>
     <hr />

@@ -11,7 +11,7 @@
     <p>Contact Details: <%= owner.contact_details %></p>
 
     <form method="post" action="/animals/<%= @animal.id %>/set_owner/<%= owner.id %>">
-      <input type="submit" value="Set owner!">
+      <input class="light" type="submit" value="Set owner!">
     </form>
     <hr />
   <%end  %>

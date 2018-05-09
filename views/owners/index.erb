@@ -7,12 +7,12 @@
     <p>Contact Details: <%= owner.contact_details %></p>
 
     <form  class= "inline" action="/owners/<%= owner.id %>/edit">
-      <input type="submit" value="Edit owner">
+      <input class="light" type="submit" value="Edit owner">
     </form>
 
     <% if owner.have_adopted != true  %>
     <form  class= "inline" method="post" action="/owners/<%= owner.id %>/delete">
-      <input type="submit" value="Delete Owner">
+      <input class="light" type="submit" value="Delete Owner">
     </form>
       <% else  %>
       <p> You can't delete an owner who has an adoption. </p>
