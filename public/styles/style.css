@@ -31,7 +31,7 @@ li a:hover {
 }
 
 img {
-  height: 200px;
+  height: 300px;
   width: auto;
   }
 
@@ -73,3 +73,12 @@ body {
   border: solid white;
   border-radius: 5%;
 }
+
+.container {
+  background: #FED766;
+  width: 50%;
+  margin-left: 325px;
+  border: solid white;
+  border-radius: 1%;
+}
+/* border: outset 2px silver; */
