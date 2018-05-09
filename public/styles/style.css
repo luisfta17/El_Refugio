@@ -3,6 +3,10 @@ nav {
   padding-left: 0px;
 }
 
+#align-left {
+  margin-right: auto;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -16,7 +20,6 @@ nav ul {
     display: flex;
     flex-direction: row;
 }
-
 
 li a {
     display: block;
@@ -42,11 +45,14 @@ h2  {
 }
 
 body {
-  background: #CEB5A7;
+  /* background: #CEB5A7; */
+  /* background-image: radial-gradient(circle, #ceb5a7, #bfad9b, #afa692, #a09e8a, #909683); */
+  /* background-image: radial-gradient(circle, #ceb5a7, #c1a89e, #b39b95, #a58f8c, #968383); */
+  background-image: radial-gradient(circle, #ceb5a7, #c3a697, #b79888, #ac8a79, #a17c6b);
   margin: 0;
   background-size: cover;
   background-position: center;
-  font-family: leto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .hide {
