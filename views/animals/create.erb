@@ -1,8 +1,10 @@
-<h2> This animal has been registered, hopefully we will find a new home for <%= @animal.name%> soon! </h2>
-<p> Age: <%= @animal.age %></p>
-<p> Type: <%= @animal.find_type() %></p>
-<p> <img src="<%= @animal.picture%>" alt="Animal picture">  </p>
-<p> <%= @animal.name %> have been in El Refugio since <%= @animal.admision_date %></p>
-<% if @animal.check_adoptability_web %>
- <p> And <%= @animal.name %> is adoptable!</p>
-<% end %>
+<div class="container centered">
+  <h2> This animal has been registered, hopefully we will find a new home for <%= @animal.name%> soon! </h2>
+  <p> Age: <%= @animal.age %></p>
+  <p> Type: <%= @animal.find_type() %></p>
+  <p> <img src="<%= @animal.picture%>" alt="Animal picture">  </p>
+  <p> <%= @animal.name %> have been in El Refugio since <%= @animal.admision_date %></p>
+  <% if @animal.check_adoptability_web %>
+   <p> And <%= @animal.name %> is adoptable!</p>
+  <% end %>
+</div>
