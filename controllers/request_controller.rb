@@ -25,14 +25,14 @@ get "/users/animals/:id/set_user" do
 end
 
 get "/users/animals/:id/set_user/:userid/set_comment" do
-@animal = Animal.find(params[:id])
-@user = User.find(params[:userid])
-erb(:"users/requests/set_comment", :layout => :user_layout)
+  @animal = Animal.find(params[:id])
+  @user = User.find(params[:userid])
+  erb(:"users/requests/set_comment", :layout => :user_layout)
 end
 
 post "/users/animals/:id/set_user/:userid" do
-@animal = Animal.find(params[:id])
-@user = User.find(params[:userid])
-@user.create_request(@animal, params[:comment])
-erb(:"users/requests/request_created", :layout => :user_layout)
+  @animal = Animal.find(params[:id])
+  @user = User.find(params[:userid])
+  @user.create_request(@animal, params[:comment])
+  erb(:"users/requests/request_created", :layout => :user_layout)
 end

@@ -48,11 +48,11 @@
       <input class="light" type="submit" value="Delete">
     </form>
 
-    <% if animal.adoptable == "t" && animal.adopted == "f" %>
+    <% if animal.check_adoptability_web() %>
       <form class= "inline" method="post" action="/animals/<%= animal.id %>/non_adoptable">
         <input class="light" type="submit" value="Set animal as non-adoptable">
       </form>
-    <% elsif animal.adoptable == "f" && animal.adopted == "f" %>
+    <% elsif animal.check_adopted_false() %>
       <form class= "inline" method="post" action="/animals/<%= animal.id %>/adoptable">
         <input class="light" type="submit" value="Set animal as adoptable">
       </form>

@@ -76,10 +76,10 @@ get "/animals/:id/set_owner" do
 end
 
 post "/animals/:id/set_owner/:ownerid" do
-@animal = Animal.find(params[:id])
-@owner = Owner.find(params[:ownerid])
-@animal.adopted_by(@owner)
-erb(:"animals/adopted")
+  @animal = Animal.find(params[:id])
+  @owner = Owner.find(params[:ownerid])
+  @animal.adopted_by(@owner)
+  erb(:"animals/adopted")
 end
 
 # UPDATE existing animals
