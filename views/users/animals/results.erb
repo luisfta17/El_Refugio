@@ -6,7 +6,7 @@
   <p> <img src="<%= animal.picture%>" alt="Animal picture">  </p>
   <p>Age: <%= animal.age %></p>
 <% if animal.adopted == "f" %>
-  <p> <%= animal.name %> have been in El Refugio since <%= animal.admision_date %></p>
+  <p> <%= animal.name %> has been in El Refugio since <%= animal.admision_date %></p>
 <% else  %>
   <p> <%= animal.name %> was in El Refugio from <%= animal.admision_date %> until <%= animal.find_adoption_info().adoption_date %> </p>
 <% end  %>
