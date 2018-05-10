@@ -37,6 +37,18 @@ rabbit = Type_of_animal.new({
 
 rabbit.save()
 
+elf = Type_of_animal.new({
+  "name" => "Elf"
+})
+
+elf.save()
+
+demodog = Type_of_animal.new({
+  "name" => "DemoDog"
+})
+
+demodog.save()
+
 owner1 = Owner.new({
   "name" => "Luis Tejero",
   "contact_details" => "Luis@gmail.com"
@@ -50,6 +62,13 @@ owner2 = Owner.new({
 })
 
 owner2.save()
+
+owner3 = Owner.new({
+  "name" => "Dustin Henderson",
+  "contact_details" => "Dustin@upsidedown.com"
+})
+
+owner3.save()
 
 animal1 = Animal.new({
   "name" => "Nano",
@@ -123,6 +142,30 @@ animal6 = Animal.new({
 
 animal6.save()
 
+animal7 = Animal.new({
+  "name" => "Dobby",
+  "type_id" => elf.id,
+  "age" => 78,
+  "admision_date" => "2018-05-10",
+  "picture" => "/images/DOBBY2.jpg",
+  "adoptable" => false,
+  "adopted" => false
+})
+
+animal7.save()
+
+animal8 = Animal.new({
+  "name" => "Dart",
+  "type_id" => demodog.id,
+  "age" => 1,
+  "admision_date" => "2018-05-10",
+  "picture" => "/images/dart.jpg",
+  "adoptable" => false,
+  "adopted" => true
+})
+
+animal8.save()
+
 adoption1 = Adopted_animal.new({
   "animal_id" => animal3.id,
   "owner_id" => owner1.id,
@@ -130,6 +173,14 @@ adoption1 = Adopted_animal.new({
 })
 
 adoption1.save()
+
+adoption2 = Adopted_animal.new({
+  "animal_id" => animal8.id,
+  "owner_id" => owner3.id,
+  "adoption_date" => "2018-05-04"
+})
+
+adoption2.save()
 
 user1 = User.new({
   "name" => "Maria Thompson",
